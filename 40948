@@ -1,0 +1,74 @@
+
+package our_first_game;
+//import java.io.IOException;
+
+import java.util.*;
+//import java.util.Scanner;
+import java.io.*;
+
+class Two{
+    Two(String s,float uprice, int usum){
+     marka=s;
+     price=uprice; 
+     sum=usum;}
+          String marka;
+float price;
+int sum;
+//static int maxString;
+String z;
+
+Scanner in = new Scanner(System.in);
+//String strs[]={"Выберите действие(0-выход):","Склад","Магазин","Найм Рабочих","Мастерская","Учет Рабочих","Бухгалтерия","Продажа товара"};
+//String strs2[]={"Выберите товар(0-выход):","Древесина","Железо","Камень","Глина","Зерно"};
+//void get_menu(String strs[]){
+    
+  //for(int i=0;i<k.length;i++)  
+  //{   if (i==0)
+//System.out.println(k[i]);
+    //  else 
+     // System.out.println(i+"."+k[i]);
+  //}
+/*System.out.println("1.Склад");
+System.out.println("2.Покупка сырья");
+System.out.println("3.Найм рабочих");
+System.out.println("4.Производство");
+System.out.println("5.Учет рабочих");
+System.out.println("6.Бухгалтерия");
+System.out.println("7.Продажа товара");
+
+ */       
+//z=in.nextLine();            }
+Two() {
+
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+//void get_shop(){
+  //  for(int i=0;i<strs.length;i++)  
+  //{   if (i==0)
+//System.out.println(strs[i]);
+  //    else 
+  //    System.out.println(i+"."+strs[i]);
+  //}
+    //System.out.println("Выберите товар(0-выход):");
+    //System.out.println("1.Древесина");
+    //System.out.println("2.Железо");
+    //System.out.println("3.Камень");
+    //System.out.println("4.Глина");
+    //z=in.nextLine();
+//}
+void get_workshop(){
+System.out.println("Что хотите произвести(0-выход):");
+}
+public void get_ArrList(){
+System.out.println(marka+" "+price+" "+sum+" шт.");
+}
+  public void setSum(int p){
+  sum+=p;
+  
+  }
+  
+  
+      }
+//class
+
+

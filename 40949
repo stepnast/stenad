@@ -1,0 +1,159 @@
+package our_first_game;
+import java.util.*;
+//import java.util.Scanner;
+import java.io.*;
+
+public class Ourfirstgame {
+static void get_menu(String k[]){
+    
+  for(int i=0;i<k.length;i++)  
+  {   if (i==0)
+System.out.println(k[i]);
+      else 
+      System.out.println(i+"."+k[i]);
+  }
+}
+static void get_menu(String k[],float b[]){
+    for(int i=0;i<k.length;i++)  
+  {   if (i==0)
+System.out.println(k[i]);
+      else 
+      System.out.println(i+"."+k[i]+" "+b[i]+"рублей");
+  }
+}
+static byte p;
+static float cena;
+/*static void show_storage(ArrayList <Two> m,String s[],int l, int index,float b[]){
+             if ( p==2) 
+              cena = b[index]/2;
+             if (p==4)
+                 cena=b[index]*10;
+             if (m.isEmpty())
+                  m.add(m.size(),new Two(s[index],cena,l));
+             else{
+             for(int i=0;i<m.size();i++){
+                
+                 if (s[index].equals(m.get(i).marka))
+                     m.get(i).sum+=l;
+                 else if (!s[index].equals(m.get(i).marka)){
+             m.add(m.size(),new Two(s[index],cena,l));}
+             }
+             }
+// bu-=l*b[index];          
+}*/
+//static Scanner in = new Scanner(System.in);
+
+   
+    public static void main(String[] args) {
+        Two menu= new Two();
+        float budjet=30000;
+        String strs[]={"Выберите действие(0-выход):","Склад","Магазин","Найм Рабочих","Мастерская","Учет Рабочих","Бухгалтерия","Продажа товара"};
+String strs2[]={"Выберите товар(0-выход):","Зерно","Глина","Древесина","Железо"};
+String strs3[]={"Выберите товар(0-выход):","Хлеб","Керамика","Мебель","Вилка","Нож","Ложка"};
+float price[]={0,10,20,40,18};
+float price1[]={0,5,10,20,9,9,9};
+ Scanner in = new Scanner(System.in);
+        ArrayList <Two> storage=new ArrayList<>();
+       //ArrayList <Two> worksop=new ArrayList<>();
+       
+        while(true){
+            System.out.println("Бюджет: "+budjet+"рублей");
+        get_menu(strs);
+        
+        //menu.z=in.nextLine();
+        switch(in.nextLine()){
+            case "1":
+               if (storage.isEmpty())
+                   System.out.println("Нет товаров");
+               else{
+                   for (int u=0;u<storage.size();u++){
+                       if (storage.get(u).sum==0)
+                           storage.remove(u);
+                       
+                   storage.get(u).get_ArrList();
+                   }
+                   
+                   System.out.println();
+               }
+                    break;
+        case "2":
+        
+          //  p=2;
+            int choice;
+             get_menu(strs2,price);
+             System.out.println("Хотите что-то купить?");
+             choice=in.nextInt();
+             in.nextLine();
+             if (choice==0)
+             {break;}
+             int t=choice;
+             System.out.println("Сколько штук?");
+             int number=0;
+           number=in.nextInt();
+           in.nextLine();
+             if (number==0)
+             { break;}
+             
+             //int number=Integer.parseInt(choice.trim());
+            // show_storage(storage,strs2,number,t,price);
+             //choice="";
+             int k=storage.size();
+             float cena = price[t]/2;
+             if (k==0)
+                  storage.add(k,new Two(strs2[choice],cena,number));
+                 
+             else{
+             for(int i=0;i<storage.size();i++){
+                System.out.println(number);
+                 if (strs2[choice]==storage.get(i).marka)
+                 {storage.get(i).setSum(number);
+                 break;
+                 }
+                 
+                 else {
+             storage.add(k,new Two(strs2[t],cena,number));
+             System.out.println("создан обьект");
+             break;
+             }
+             }
+            }
+             budjet-=number*price[t];
+                    break;
+                    
+        case "3":
+                    break;
+        case"4":
+           // p=4;
+            get_menu(strs3,price1);
+            System.out.println("Хотите что-то произвести?");
+             choice=in.nextInt();
+             t=choice;
+              if (t==0)
+             {break;}
+              //t=Integer.parseInt(choice.trim());
+             System.out.println("Сколько штук?");
+             number=in.nextInt();
+             if (number==0)
+             {break;}
+             //number=Integer.parseInt(choice.trim());
+             //k=storage.size();
+             //show_storage(storage,strs3,number,t,price1);
+             //storage.add(storage.size(),new Two(strs3[t],cena,number));
+             //budjet-=number*;
+            budjet-=number*price1[t];
+            break;
+        case "5":
+                    break;
+        case "6":
+                    break;
+        case "7":
+                    break;
+        default:
+        System.out.println("проблем");
+            break;
+        }
+       if ("0".equals(menu.z))
+           break;}
+    }
+    
+}
